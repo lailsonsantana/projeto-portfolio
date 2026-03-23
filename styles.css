@@ -14,13 +14,9 @@
   --last: #F1F5F9;       
 }
 
-/* --- Lógica das Imagens do Tema --- */
-
-/* No modo LIGHT (Padrão): Mostra a Lua, Esconde o Sol */
 .theme-sun { display: none; }
 .theme-moon { display: inline; }
 
-/* No modo DARK (Checkbox marcado): Mostra o Sol, Esconde a Lua */
 :root:has(#theme-toggle:checked) .theme-sun { 
     display: inline !important; 
 }
@@ -28,6 +24,13 @@
 :root:has(#theme-toggle:checked) .theme-moon { 
     display: none !important; 
 }
+
+
+input, textarea, select {
+  color: black;
+}
+
+
 
 
 body {
