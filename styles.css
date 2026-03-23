@@ -1,6 +1,39 @@
-:root{
-    --primary-color: #0C0D0C;
-    --second-color: #D9D9D9;
+:root {
+  --primary: #56688C;
+  --secondary: #9BA7BF;
+  --background: #7686A6;
+  --third: #C1C9D9;
+  --last: #E9ECF2;
+}
+
+:root:has(#theme-toggle:checked) {
+  --primary: #1E293B;    
+  --secondary: #334155;  
+  --background: #0F172A;
+  --third: #94A3B8;      
+  --last: #F1F5F9;       
+}
+
+/* --- Lógica das Imagens do Tema --- */
+
+/* No modo LIGHT (Padrão): Mostra a Lua, Esconde o Sol */
+.theme-sun { display: none; }
+.theme-moon { display: inline; }
+
+/* No modo DARK (Checkbox marcado): Mostra o Sol, Esconde a Lua */
+:root:has(#theme-toggle:checked) .theme-sun { 
+    display: inline !important; 
+}
+
+:root:has(#theme-toggle:checked) .theme-moon { 
+    display: none !important; 
+}
+
+
+body {
+  background-color: var(--background);
+  color: var(--last);
+  transition: background-color 0.3s ease; 
 }
 
 * {

@@ -1,317 +1,395 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <title>Lailson Santana | Portfolio</title>
 </head>
 
-<body>
+<body class="w-screen overflow-x-hidden">
 
-    <header class="bg-[#0C0D0C]">
-        <nav>
-            <ul class="flex justify-center text-white gap-4 p-6">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#contato">Contato</a></li>
-                <li><a href="#experiencias">Experiência</a></li>
-                <li><a href="#blog">Blog</a></li>
+    <input type="checkbox" id="theme-toggle" class="hidden">
+
+    <header class="bg-[var(--primary)] w-full shadow-lg transition-colors duration-300 mx-auto">
+
+        <nav class="flex items-center justify-center md:justify-between p-2 pr-4">
+            <ul class="hidden md:block">
+                <li>
+                    <img src="images/logo.png" class="w-24 h-24 object-cover pl-4" />
+                </li>
+            </ul>
+
+            <ul class="flex justify-center items-center w-full mx-auto text-[var(--last)] gap-8 p-6 font-semibold uppercase text-sm tracking-widest lg:text-lg">
+                <li><a href="#home" class="hover:text-[var(--third)]">Home</a></li>
+                <li><a href="#blog" class="hover:text-[var(--third)]">Blog</a></li>
+                <li><a href="#experiencias" class="hover:text-[var(--third)]">Experiência</a></li>
+                <li><a href="#contato" class="hover:text-[var(--third)]">Contato</a></li>
+            </ul>
+
+            <ul class="hidden md:block">
+                <li class="flex items-center pr-4">
+                    <label for="theme-toggle"
+                        class="cursor-pointer p-2 rounded-full hover:bg-[var(--secondary)] transition-all active:scale-95"
+                        title="Alternar Tema">
+                        <span class="hidden theme-sun">
+                            <img src="images/light.png" class="w-12 h-12 object-cover" />
+                        </span>
+                        <span class="inline theme-moon">
+                            <img src="images/dark.png" class="w-12 h-12 object-cover" />
+                        </span>
+                    </label>
+                </li>
             </ul>
         </nav>
     </header>
 
+    <div class="w-screen h-0.5 bg-[var(--secondary)]"></div>
+
     <main>
-        <div  class="flex flex-col bg-[#585959] w-screen h-screen border-white">
-            <section id="home" class="grid grid-cols-1 lg:flex items-center justify-center m-auto place-items-center gap-8">
+        <div class="flex flex-col bg-[var(--background)] w-screen h-screen">
+            <section id="home"
+                class="grid grid-cols-1 items-center justify-center lg:flex items-center justify-center m-auto place-items-center gap-12">
 
-
-
-                <div class="w-80 h-80">
-                    <img src="/images/myphoto.png" class="w-full h-full object-fit rounded-full"/>
+                <div
+                    class="w-48 h-48 lg:w-80 lg:h-80 ring-4 ring-[#C1C9D9]/30  rounded-full overflow-hidden shadow-2xl">
+                    <img src="images/myphoto.png" class="w-full h-full object-cover" alt="Lailson Santana" />
                 </div>
 
+                <div class="flex flex-col items-center justify-center p-2 text-[var(--last)]">
+                    <h1 class="text-center text-5xl font-black lg:text-8xl">
+                        Lailson Santana
+                    </h1>
+                    <h2 class="text-[var(--third)] text-center text-3xl font-light lg:text-5xl mt-2">
+                        Backend Developer
+                    </h2>
 
-                <div class="flex flex-col items-center p-2 text-white justify-center">
-                    
-                <h1 class="text-white text-center text-5xl font-thin lg:text-8xl">Lailson Santana</h1>
-                <h2 class="text-white text-center text-3xl font-thin lg:text-6xl">Backend Developer</h2>
-                    
-                    
-                    
-                    <div class="flex gap-4 mt-4 p-4">
-                        <button class="flex justify-center items-center border border-white p-2">
-                            
-                            Download CV
+                    <div class="flex gap-2 mt-8 m-8">
+                        <button
+                            class="flex justify-center items-center bg-[var(--primary)] text-white p-3 px-4 rounded-xl gap-2 hover:bg-[#455473] transition-all shadow-xl text-xs lg:text-lg">
+                            <img src="images/download.png" class="w-5 h-5" />
+                            <span>Download CV</span>
                         </button>
 
-                        <button class="flex justify-center items-center border border-white p-2 ">
-                            Fale comigo
+                        <button
+                            class="flex justify-center items-center bg-[var(--primary)] text-white p-3 px-4 rounded-xl gap-2 hover:bg-[#455473] transition-all shadow-xl text-xs lg:text-lg">
+                            <img src="images/email.png" class="w-5 h-5" />
+                            <span>Fale comigo</span>
                         </button>
-                        
                     </div>
-
-                    
                 </div>
+
             </section>
 
-            <div class="flex flex-col p-8 items-end">
-                <div class="flex flex-col">
-                    <h1 class="text-white text-center text-sm lg:text-lg font-thin">Construindo e transformando códigos em soluções reais, </h1>
-                    <h1 class="text-white text-center text-sm lg:text-lg font-thin">em um mundo digital, dinâmico e conectado.  </h1>
+            <div class="flex flex-col p-12 items-center lg:items-end">
+                <div class="flex flex-col text-[var(--last)] opacity-70 italic text-center lg:tx-right">
+                    <p class="text-sm lg:text-xl font-light">Construindo e transformando códigos em soluções reais,</p>
+                    <p class="text-sm lg:text-xl font-light">em um mundo digital, dinâmico e conectado.</p>
                 </div>
             </div>
         </div>
 
-        
-        <div class="flex flex-col justify-center items-center p-4">
-            <h2 class="flex text-6xl">BLOG</h2>
-            <section id="blog" class="grid grid-cols-1 md:grid-cols-3 gap-8 p-8">
 
-                <div class="mx-auto my-auto overflow-hidden rounded-3xl aspect-4/3 bg-white shadow-lg border border-gray-100 p-8">
-                    <img src="images/ia.jpg">
-                    
-                    <h3 class="font-bold p-4">
-                        O Impacto da Inteligência Artificial no Dia a Dia
-                    </h3>
+        <div id="blog" class="flex flex-col justify-center items-center py-24 px-4 bg-[var(--last)] w-full">
+            <h2 class="text-4xl font-black text-[var(--primary)] mb-16 border-b-4 border-[var(--secondary)] pb-2 md:text-6xl">BLOG</h2>
 
-                    <p>
-                        Explore como a inteligência artificial já está presente na rotina das pessoas, desde assistentes virtuais
-                        até recomendações em plataformas de streaming, e como essa tecnologia continuará transformando hábitos e mercados.
-                    </p>
+            <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl px-6">
+
+                <div
+                    class="group overflow-hidden rounded-3xl bg-white shadow-lg hover:shadow-2xl transition-all border border-[var(--third)] p-6">
+                    <div class="rounded-2xl overflow-hidden mb-5 h-48 bg-[var(--third)]">
+                        <img src="images/ia.jpg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <h3 class="font-bold text-[var(--primary)] text-xl mb-3">O Impacto da Inteligência Artificial</h3>
+                    <p class="text-gray-600 leading-relaxed">Explore como a IA já está presente na rotina e como
+                        continuará transformando hábitos e mercados.</p>
                 </div>
 
-                <div class="mx-auto my-auto overflow-hidden rounded-3xl aspect-4/3 bg-white shadow-lg border border-gray-100 p-8">
-                    <img src="images/tech2026.jpg">
-                    
-                    <h3 class="font-bold p-4">
-                        Tendências Tecnológicas para Ficar de Olho em 2026
-                    </h3>
-
-                    <p>
-                        Descubra as principais inovações que prometem dominar o cenário tecnológico, como computação quântica,
-                        realidade aumentada e automação avançada, e entenda como elas podem impactar empresas e consumidores.
-                    </p>
+                <div
+                    class="group overflow-hidden rounded-3xl bg-white shadow-lg hover:shadow-2xl transition-all border border-[var(--third)] p-6">
+                    <div class="rounded-2xl overflow-hidden mb-5 h-48 bg-[var(--third)]">
+                        <img src="images/tech2026.jpg"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <h3 class="font-bold text-[var(--primary)] text-xl mb-3">Tendências para 2026</h3>
+                    <p class="text-gray-600 leading-relaxed">Inovações como computação quântica e automação avançada que
+                        prometem dominar o cenário.</p>
                 </div>
 
-                <div class="mx-auto my-auto overflow-hidden rounded-3xl aspect-4/3 bg-white shadow-lg border border-gray-100 p-8">
-                    <img src="images/compnuvem.avif">
-                    
-                    <h3 class="font-bold p-4">
-                        O Que é Computação em Nuvem e Por Que Ela é Essencial
-                    </h3>
-
-                    <p>
-                        Entenda o conceito de cloud computing, como funciona o armazenamento em nuvem e por que empresas de todos 
-                        os tamanhos estão adotando essa solução para ganhar escalabilidade e segurança.
-                    </p>
+                <div
+                    class="group overflow-hidden rounded-3xl bg-white shadow-lg hover:shadow-2xl transition-all border border-[var(--third)] p-6">
+                    <div class="rounded-2xl overflow-hidden mb-5 h-48 bg-[var(--third)]">
+                        <img src="images/compnuvem.avif"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <h3 class="font-bold text-[var(--primary)] text-xl mb-3">Computação em Nuvem</h3>
+                    <p class="text-gray-600 leading-relaxed">Por que empresas buscam escalabilidade e segurança através
+                        de soluções Cloud Computing.</p>
                 </div>
 
-                <div class="mx-auto my-auto overflow-hidden rounded-3xl aspect-4/3 bg-white shadow-lg border border-gray-100 p-8">
-                    <img src="images/seguranca.avif">
-                    
-                    <h3 class="font-bold p-4">
-                        Segurança Digital: Como Proteger Seus Dados na Internet
-                    </h3>
-
-                    <p>
-                        Veja dicas práticas para manter suas informações seguras online, incluindo uso de senhas fortes, 
-                        autenticação em dois fatores e cuidados ao acessar redes públicas.
-                    </p>
+                <div
+                    class="group overflow-hidden rounded-3xl bg-white shadow-lg hover:shadow-2xl transition-all border border-[var(--third)] p-6">
+                    <div class="rounded-2xl overflow-hidden mb-5 h-48 bg-[var(--third)]">
+                        <img src="images/seguranca.avif"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <h3 class="font-bold text-[var(--primary)] text-xl mb-3">Segurança Digital</h3>
+                    <p class="text-gray-600 leading-relaxed">Dicas práticas para manter dados seguros online e cuidados
+                        essenciais na rede.</p>
                 </div>
 
-                <div class="mx-auto my-auto overflow-hidden rounded-3xl aspect-4/3 bg-white shadow-lg border border-gray-100 p-8">
-                    <img src="images/iot.webp">
-                    
-                    <h3 class="font-bold p-4">
-                        Internet das Coisas (IoT): Casas Inteligentes e o Futuro Conectado
-                    </h3>
-
-                    <p>
-                        Saiba como dispositivos conectados estão transformando residências em ambientes inteligentes e 
-                        quais são os benefícios e desafios dessa tecnologia no cotidiano.
-                    </p>
+                <div
+                    class="group overflow-hidden rounded-3xl bg-white shadow-lg hover:shadow-2xl transition-all border border-[var(--third)] p-6">
+                    <div class="rounded-2xl overflow-hidden mb-5 h-48 bg-[var(--third)]">
+                        <img src="images/iot.webp"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <h3 class="font-bold text-[var(--primary)] text-xl mb-3">Internet das Coisas (IoT)</h3>
+                    <p class="text-gray-600 leading-relaxed">Saiba como dispositivos conectados transformam residências
+                        em ambientes inteligentes.</p>
                 </div>
 
-                <div class="mx-auto my-auto overflow-hidden rounded-3xl aspect-4/3 bg-white shadow-lg border border-gray-100 p-8">
-                    <img src="images/carro.webp">
-                    
-                    <h3 class="font-bold p-4">
-                        Carros Elétricos: Vale a Pena Investir em 2026?
-                    </h3>
-
-                    <p>
-                        Analise os prós e contras dos veículos elétricos, incluindo economia, sustentabilidade e infraestrutura, 
-                        para entender se esse tipo de transporte já é uma boa opção no cenário atual.
-                    </p>
+                <div
+                    class="group overflow-hidden rounded-3xl bg-white shadow-lg hover:shadow-2xl transition-all border border-[var(--third)] p-6">
+                    <div class="rounded-2xl overflow-hidden mb-5 h-48 bg-[var(--third)]">
+                        <img src="images/carro.webp"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <h3 class="font-bold text-[var(--primary)] text-xl mb-3">Carros Elétricos em 2026</h3>
+                    <p class="text-gray-600 leading-relaxed">Analise os prós e contras da mobilidade elétrica no cenário
+                        tecnológico atual.</p>
                 </div>
             </section>
         </div>
 
+        <div id="experiencias" class="bg-[var(--third)] w-full py-24 px-4 flex flex-col justify-center items-center">
+            <h2 class="text-4xl font-black text-[var(--primary)] mb-16 border-b-4 border-[var(--secondary)] pb-2 md:text-6xl">
+                EXPERIÊNCIAS</h2>
 
-        <div class="flex flex-col justify-center items-center p-4 gap-4">
-            <h2 class="flex text-4xl sm:text-6xl">EXPERIÊNCIAS</h2>
-            <section id="experiencias" class="grid grid-cols-1 md:grid-cols-2 gap-8 p-8">
-                <div class="p-4 gap-8 border border-gray-700 rounded-md">
-                    <h3 class="font-bold text-xl mb-4">
-                        Desenvolvedor Web (10/2023 -10/2025)
-                    </h3>
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl w-full px-6">
 
-                    <h2 class="mt-4 border border-t-gray-400 text-xl"></h2>
-                        Colegiado de Ciência da Computação UESB
-                    </h2>
-                    
-                    <ul class="font-thin">
-                        <li>
-                            Gerenciamento de manutenção de site institucional em Wordpress
-                        </li>
-                        <li>
-                            Desenvovilmento de snippets utilizando HTML, CSS e Javascript
-                        </li>
-                        <li>
-                            Suporte técnico em demandas internas e melhorias contínuas
-                        </li>
+                <div
+                    class="p-8 bg-[var(--primary)] text-[var(--last)] rounded-3xl shadow-xl border border-[var(--background)]">
+                    <div class="flex flex-col sm:flex-row justify-between items-start gap-4 mb-6">
+                        <div>
+                            <h3 class="font-bold text-2xl">Desenvolvedor Web</h3>
+                            <p class="text-[var(--third)] font-medium">Colegiado de Computação UESB</p>
+                        </div>
+                        <span
+                            class="text-xs font-bold bg-[var(--background)] text-white px-4 py-1 rounded-full border border-[var(--background)]">2023
+                            - 2025</span>
+                    </div>
+                    <div class="w-full h-[1px] bg-[var(--secondary)] mb-6"></div>
+                    <ul class="space-y-4 font-light">
+                        <li class="flex items-center gap-3"><span class="text-[var(--third)]">▹</span> Gerenciamento e
+                            manutenção de site institucional em WordPress.</li>
+                        <li class="flex items-center gap-3"><span class="text-[var(--third)]">▹</span> Desenvolvimento
+                            de snippets utilizando HTML, CSS e JavaScript.</li>
+                        <li class="flex items-center gap-3"><span class="text-[var(--third)]">▹</span> Suporte técnico
+                            em demandas internas e melhorias contínuas.</li>
+                    </ul>
+
+                </div>
+
+                <div
+                    class="p-8 bg-[var(--primary)] text-[var(--last)] rounded-3xl shadow-lg border border-[var(--background)]">
+                    <div class="flex flex-col sm:flex-row justify-between items-start gap-4 mb-6">
+                        <div>
+                            <h3 class="font-bold text-2xl">Iniciação Científica</h3>
+                            <p class="text-[var(--third)] font-medium">FAPESB</p>
+                        </div>
+                        <span
+                            class="text-xs font-bold bg-[var(--background)] text-white px-4 py-1 rounded-full border border-[var(--background)]">2021
+                            - 2022</span>
+                    </div>
+                    <div class="w-full h-[1px] bg-[var(--secondary)] mb-6"></div>
+                    <ul class="space-y-4 font-light">
+                        <li class="flex items-center gap-3"><span class="text-[var(--third)]">▹</span> Migração de
+                            sistema legado de Delphi para Java.</li>
+                        <li class="flex items-center gap-3"><span class="text-[var(--third)]">▹</span> Desenvolvimento e
+                            manutenção de funcionalidades.</li>
+                        <li class="flex items-center gap-3"><span class="text-[var(--third)]">▹</span> Execução de
+                            testes e apoio em processos de deploy.</li>
                     </ul>
                 </div>
 
-                <div class="p-4 gap-2 border border-gray-700 rounded-md">
-                    <h3 class="font-bold text-xl">
-                        Desenvolvedor Web (10/2023 -10/2025)
-                    </h3>
-
-                    <h2 class="mt-4 mb-2 border border-t-gray-400 text-xl"></h2>
-                        Colegiado de Ciência da Computação UESB
-                    </h2>
-                    
-                    <ul class="font-thin">
-                        <li>
-                            Gerenciamento de manutenção de site institucional em Wordpress
-                        </li>
-                        <li>
-                            Desenvovilmento de snippets utilizando HTML, CSS e Javascript
-                        </li>
-                        <li>
-                            Suporte técnico em demandas internas e melhorias contínuas
-                        </li>
+                <div
+                    class="p-8 bg-[var(--primary)] text-[var(--last)] rounded-3xl shadow-lg border border-[var(--background)]">
+                    <div class="flex flex-col sm:flex-row justify-between items-start gap-4 mb-6">
+                        <div>
+                            <h3 class="font-bold text-2xl">Frelancer</h3>
+                            <p class="text-[var(--third)] font-medium">Online</p>
+                        </div>
+                        <span
+                            class="text-xs font-bold bg-[var(--background)] text-white px-4 py-1 rounded-full border border-[var(--background)]">2021
+                            - 2022</span>
+                    </div>
+                    <div class="w-full h-[1px] bg-[var(--secondary)] mb-6"></div>
+                    <ul class="space-y-4 font-light">
+                        <li class="flex items-center gap-3"><span class="text-[var(--third)]">▹</span> Desenvolvimento
+                            de algoritmos sob demanda</li>
+                        <li class="flex items-center gap-3"><span class="text-[var(--third)]">▹</span> Desenvolvimento
+                            de algoritmos sob demanda</li>
+                        <li class="flex items-center gap-3"><span class="text-[var(--third)]">▹</span> Desenvolvimento
+                            de algoritmos sob demanda</li>
                     </ul>
                 </div>
 
-                <div class="p-4 gap-2 border border-gray-700 rounded-md">
-                    <h3 class="font-bold text-xl">
-                        Desenvolvedor Web (10/2023 -10/2025)
-                    </h3>
-
-                    <h2 class="mt-4 mb-2 border border-t-gray-400 text-xl font-bold"></h2>
-                        Colegiado de Ciência da Computação UESB
-                    </h2>
-                    
-                    <ul class="font-thin">
-                        <li>
-                            Gerenciamento de manutenção de site institucional em Wordpress
-                        </li>
-                        <li>
-                            Desenvovilmento de snippets utilizando HTML, CSS e Javascript
-                        </li>
-                        <li>
-                            Suporte técnico em demandas internas e melhorias contínuas
-                        </li>
+                <div
+                    class="p-8 bg-[var(--primary)] text-[var(--last)] rounded-3xl shadow-lg border border-[var(--background)]">
+                    <div class="flex flex-col sm:flex-row justify-between items-start gap-4 mb-6">
+                        <div>
+                            <h3 class="font-bold text-2xl">Monitor de Programação I</h3>
+                            <p class="text-[var(--third)] font-medium">UESB</p>
+                        </div>
+                        <span
+                            class="text-xs font-bold bg-[var(--background)] text-white px-4 py-1 rounded-full border border-[var(--background)]">2021
+                            - 2022</span>
+                    </div>
+                    <div class="w-full h-[1px] bg-[var(--secondary)] mb-6"></div>
+                    <ul class="space-y-4 font-light">
+                        <li class="flex items-center gap-3"><span class="text-[var(--third)]">▹</span> Apoio aos alunos
+                            na resolução de atividades práticas.</li>
+                        <li class="flex items-center gap-3"><span class="text-[var(--third)]">▹</span> Correção de
+                            exercícios e análise de algoritmos.</li>
+                        <li class="flex items-center gap-3"><span class="text-[var(--third)]">▹</span> Condução de
+                            sessões de monitoria e esclarecimento de dúvidas
+                            .</li>
                     </ul>
                 </div>
-
-                <div class="p-4 gap-2 border border-gray-700 rounded-md">
-                    <h3 class="font-bold text-xl">
-                        Desenvolvedor Web (10/2023 -10/2025)
-                    </h3>
-
-                    <h2 class="flex justify-center items-center mt-4 mb-2 border border-t-gray-400 text-xl"></h2>
-                        Colegiado de Ciência da Computação UESB
-                    </h2>
-                    
-                    <ul class="font-thin">
-                        <li>
-                            Gerenciamento de manutenção de site institucional em Wordpress
-                        </li>
-                        <li>
-                            Desenvovilmento de snippets utilizando HTML, CSS e Javascript
-                        </li>
-                        <li>
-                            Suporte técnico em demandas internas e melhorias contínuas
-                        </li>
-                    </ul>
-                </div>
-
-                
             </section>
         </div>
 
-        <div class="flex flex-col justify-center items-center p-4 gap-4 mt-12">
-            <h2 class="flex text-4xl sm:text-6xl">CONTATO</h2>
-        
-        <section id="contato" >
-            <form action="/contato" method="POST" class="bg-[#F2F2F2] flex flex-col gap-4 p-4 rounded-md">
+        <div id="contato" class="flex flex-col justify-center items-center py-24 px-6 bg-[var(--background)] w-screen">
 
+            <h2
+                class="text-4xl font-black border-b-4 border-[var(--third)] pb-2 text-[var(--last)] uppercase mb-12 text-center md:text-6xl">
+                CONTATO
+            </h2>
 
-                <div class="form-group">
-                    <label for="nome">Nome:</label>
-                    <input class="boder-2 border-gray-700" type="text" id="nome" name="nome" required>
-                </div>
+            <section class="w-full max-w-3xl">
+                <form
+                    class="bg-[var(--last)] shadow-2xl flex flex-col gap-8 p-10 lg:p-14 rounded-[2rem] border border-white/20">
 
-                <div class="form-group my-auto">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="flex flex-col gap-2">
+                            <label class="text-xs uppercase tracking-widest font-black text-[var(--primary)] ml-1">
+                                Nome Completo
+                            </label>
+                            <input type="text" placeholder="Ex: Lailson Santana"
+                                class="w-full px-5 py-4 rounded-2xl border-2 border-[var(--third)] focus:border-[var(--primary)] outline-none transition-all bg-white">
+                        </div>
 
-                <div class="form-group">
-                    <label for="data">Data de Nascimento</label>
-                    <input type="date" id="data" name="data" required>
-                </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="text-xs uppercase tracking-widest font-black text-[var(--primary)] ml-1">
+                                Email Profissional
+                            </label>
+                            <input type="email" placeholder="seu@email.com"
+                                class="w-full px-5 py-4 rounded-2xl border-2 border-[var(--third)] focus:border-[var(--primary)] outline-none transition-all bg-white">
+                        </div>
+                    </div>
 
-                <div class="form-group">
-                    <label>Sexo</label>
-                    <div class="radio-group">
-                        <label>
-                            <input type="radio" name="sexo" value="M"> Masculino
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="flex flex-col gap-2 w-full md:w-full">
+                            <label class="text-xs uppercase font-black text-[var(--primary)] ml-1">
+                                Data de Nascimento
+                            </label>
+                            <input type="date"
+                                class="w-full px-5 py-4 rounded-2xl border-2 border-[var(--third)] focus:border-[var(--primary)] outline-none transition-all bg-white">
+
+                        </div>
+
+                        <div class="flex flex-col gap-2">
+                            <label class="text-xs uppercase font-black text-[var(--primary)] ml-1">
+                                País
+                            </label>
+                            <select
+                                class="w-full px-5 py-5 rounded-2xl border-2 border-[var(--third)] focus:border-[var(--primary)] transition-all outline-none bg-white">
+                                <option value="">Selecione um país</option>
+                                <option value="br">Brasil</option>
+                                <option value="us">Estados Unidos</option>
+                                <option value="uk">Reino Unido</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-end">
+
+                        <div class="flex flex-col gap-2">
+                            <label class="text-xs uppercase tracking-widest font-black text-[var(--primary)] ml-1">
+                                Sexo
+                            </label>
+                            <div class="flex gap-6 text-sm text-[var(--background)]">
+                                <label class="flex items-center gap-2 cursor-pointer">
+                                    <input type="radio" name="sexo" value="M" class="accent-[var(--primary)]">
+                                    Masculino
+                                </label>
+
+                                <label class="flex items-center gap-2 cursor-pointer">
+                                    <input type="radio" name="sexo" value="F" class="accent-[var(--primary)]">
+                                    Feminino
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-3 mb-4">
+                        <label class="text-xs uppercase tracking-widest font-black text-[var(--primary)] ml-1">
+                            Foto
                         </label>
-                        <label>
-                            <input type="radio" name="sexo" value="F"> Feminino
+
+                        <label
+                            class="flex flex-col items-center justify-center w-full h-40 border-2 border-dashed border-[var(--third)] rounded-2xl cursor-pointer hover:border-[var(--primary)] transition-all bg-white">
+                            <span class="text-sm text-gray-500">
+                                Clique ou arraste uma imagem aqui
+                            </span>
+                            <input type="file" class="hidden" accept="image/*">
                         </label>
                     </div>
-                </div>
 
-                <div class="form-group">
-                    <label for="foto">Foto</label>
-                    <input type="file" id="foto" name="foto" accept="image/*">
-                </div>
+                    <div class="flex flex-col gap-2">
+                        <label class="text-xs uppercase tracking-widest font-black text-[var(--primary)] ml-1">
+                            Assunto ou Mensagem
+                        </label>
+                        <textarea rows="4" placeholder="Como posso te ajudar?"
+                            class="w-full px-5 py-4 rounded-2xl border-2 border-[var(--third)] focus:border-[var(--primary)] outline-none transition-all bg-white resize-none"></textarea>
+                    </div>
 
-                <div class="form-group">
-                    <label for="telefone">Telefone:</label>
-                    <input type="tel" id="telefone" name="telefone" required>
-                </div>
+                    <div class="flex justify-between items-center mt-4">
+                        <button type="reset"
+                            class="bg-[var(--primary)] text-[var(--last)] font-black py-5 px-4 rounded-2xl shadow-xl hover:bg-[#455473]  transition-all  uppercase text-sm">
+                            Limpar
+                        </button>
 
-                <div class="form-group">
-                    <label for="pais">País</label>
-                    <select id="pais" name="pais">
-                        <option value="">Selecione um país</option>
-                        <option value="br">Brasil</option>
-                        <option value="us">Estados Unidos</option>
-                        <option value="uk">Reino Unido</option>
-                    </select>
-                </div>
+                        <button type="submit"
+                            class="bg-[var(--primary)] text-[var(--last)] font-black py-5 px-4 rounded-2xl shadow-xl hover:bg-[#455473]  transition-all  uppercase text-sm">
+                            Enviar Proposta
+                        </button>
+                    </div>
 
-                <div class="flex justify-center p-4 gap-4">
-                    <button type="submit" class="flex justify-center bg-[#585959] text-white rounded-md border border-white p-2">Cadastrar</button>
-                    <button type="reset" class="flex justify-center bg-[#585959] text-white rounded-md border border-white p-2">Limpar</button>
-                </div>
-
-            </form>
-        </section>
+                </form>
+            </section>
         </div>
+
+        <footer class="bg-[var(--primary)] w-screen border-t border-[var(--background)]">
+            <div
+                class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center p-10 gap-6 text-[var(--third)]">
+                <div class="text-center md:text-left">
+                    <p class="text-lg font-bold text-white">Lailson Santana</p>
+                    <p class="text-sm">© 2026 . All rights reserved.</p>
+                </div>
+                <div class="flex gap-8 font-medium">
+                    <a href="#" class="hover:text-white transition-colors">GitHub</a>
+                    <a href="#" class="hover:text-white transition-colors">LinkedIn</a>
+                    <a href="#" class="hover:text-white transition-colors">Instagram</a>
+                </div>
+            </div>
+        </footer>
     </main>
 
 </body>
