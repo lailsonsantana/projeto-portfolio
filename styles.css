@@ -6,31 +6,27 @@
   --last: #E9ECF2;
 }
 
-:root:has(#theme-toggle:checked) {
+[data-contexto="light"] {
+  --primary: #56688C;
+  --secondary: #9BA7BF;
+  --background: #7686A6;
+  --third: #C1C9D9;
+  --last: #E9ECF2;
+}
+
+[data-contexto="dark"] {
   --primary: #1E293B;    
   --secondary: #334155;  
   --background: #0F172A;
   --third: #94A3B8;      
-  --last: #F1F5F9;       
+  --last: #F1F5F9; 
 }
 
-.theme-sun { display: none; }
-.theme-moon { display: inline; }
-
-:root:has(#theme-toggle:checked) .theme-sun { 
-    display: inline !important; 
-}
-
-:root:has(#theme-toggle:checked) .theme-moon { 
-    display: none !important; 
-}
 
 
 input, textarea, select {
   color: black;
 }
-
-
 
 
 body {
@@ -48,4 +44,12 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+.mensagem-erro {
+    color: #e74c3c;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: block;
+    min-height: 1rem; /* Evita que o layout "pule" quando a mensagem aparece */
 }

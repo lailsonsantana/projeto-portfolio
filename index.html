@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" data-contexto="light">
 
 <head>
     <meta charset="UTF-8">
@@ -32,17 +32,10 @@
             </ul>
 
             <ul class="hidden md:block">
-                <li class="flex items-center">
-                    <label for="theme-toggle"
-                        class="cursor-pointer p-2 rounded-full hover:bg-[var(--secondary)] transition-all active:scale-95"
-                        title="Alternar Tema">
-                        <span class="hidden theme-sun">
-                            <img src="images/light.png" class="w-12 h-12 object-cover" />
-                        </span>
-                        <span class="inline theme-moon">
-                            <img src="images/dark.png" class="w-12 h-12 object-cover" />
-                        </span>
-                    </label>
+                <li class="flex items-center cursor-pointer p-2 rounded-full  transition-all active:scale-95">
+                    <button class="button-theme-toggle">
+                        <img src="images/dark.png" class="image-theme w-10 h-10 object-contain"/>
+                    </button>
                 </li>
             </ul>
         </nav>
@@ -108,10 +101,6 @@
                     <h3 class="font-bold text-[var(--primary)] text-xl mb-3">O Impacto da Inteligência Artificial</h3>
                     <p class="text-gray-600 leading-relaxed">Explore como a IA já está presente na rotina e como
                         continuará transformando hábitos e mercados.</p>
-                </div>
-
-                <div>
-                    Nova div
                 </div>
 
                 <div
@@ -271,30 +260,31 @@
 
         <div id="contato" class="flex flex-col justify-center items-center mx-auto py-24 px-6 bg-[var(--background)] w-full">
 
-            <h2
-                class="text-4xl font-black border-b-4 border-[var(--third)] pb-2 text-[var(--last)] uppercase mb-12 text-center md:text-6xl">
+           
+            <h2 class="text-4xl font-black border-b-4 border-[var(--third)] pb-2 text-[var(--last)] uppercase mb-12 text-center md:text-6xl">
                 CONTATO
             </h2>
 
             <section class="w-full max-w-3xl">
-                <form
-                    class="bg-[var(--last)] shadow-2xl flex flex-col gap-8 p-10 lg:p-14 rounded-[2rem] border border-white/20">
+                <form class="bg-[var(--last)] shadow-2xl flex flex-col gap-8 p-10 lg:p-14 rounded-2xl text-black">
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="flex flex-col gap-2">
                             <label class="text-xs uppercase tracking-widest font-black text-[var(--primary)] ml-1">
                                 Nome Completo
                             </label>
-                            <input type="text" placeholder="Ex: Lailson Santana"
-                                class="w-full px-5 py-4 rounded-2xl border-2 border-[var(--third)] focus:border-[var(--primary)] outline-none transition-all bg-white">
+                            <input type="text" placeholder="Ex: Lailson Santana" name="name" id="name" required
+                                class="w-full px-5 py-4 rounded-2xl border-2 border-[var(--third)] focus:border-[var(--primary)] outline-none transition-all caret-black">
+                            <span class="mensagem-erro"></span>
                         </div>
 
                         <div class="flex flex-col gap-2">
                             <label class="text-xs uppercase tracking-widest font-black text-[var(--primary)] ml-1">
                                 Email Profissional
                             </label>
-                            <input type="email" placeholder="seu@email.com"
-                                class="w-full px-5 py-4 rounded-2xl border-2 border-[var(--third)] focus:border-[var(--primary)] outline-none transition-all bg-white">
+                            <input type="email" placeholder="seu@email.com" name="email" id="email" required
+                                class="w-full px-5 py-4 rounded-2xl border-2 border-[var(--third)] focus:border-[var(--primary)] outline-none transition-all caret-black">
+                            <span class="mensagem-erro"></span>
                         </div>
                     </div>
 
@@ -303,26 +293,28 @@
                             <label class="text-xs uppercase font-black text-[var(--primary)] ml-1">
                                 Data de Nascimento
                             </label>
-                            <input type="date"
+                            <input type="date" name="date" id="date" required
                                 class="w-full px-5 py-4 rounded-2xl border-2 text-black border-[var(--third)] focus:border-[var(--primary)] outline-none transition-all bg-white">
-
+                            <span class="mensagem-erro"></span>
                         </div>
 
                         <div class="flex flex-col gap-2">
                             <label class="text-xs uppercase font-black text-[var(--primary)] ml-1">
                                 País
                             </label>
-                            <select
+                            <select name="country" id="country" required
                                 class="w-full px-5 py-5 rounded-2xl border-2 text-black border-[var(--third)] focus:border-[var(--primary)] transition-all outline-none bg-white">
+            
                                 <option value="">Selecione um país</option>
                                 <option value="br">Brasil</option>
                                 <option value="us">Estados Unidos</option>
                                 <option value="uk">Reino Unido</option>
                             </select>
+                            <span class="mensagem-erro"></span>
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-end">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
 
                         <div class="flex flex-col gap-2">
                             <label class="text-xs uppercase tracking-widest font-black text-[var(--primary)] ml-1">
@@ -330,38 +322,76 @@
                             </label>
                             <div class="flex gap-6 text-sm text-[var(--background)]">
                                 <label class="flex items-center gap-2 cursor-pointer">
-                                    <input type="radio" name="sexo" value="M" class="accent-[var(--primary)]">
+                                    <input type="radio" name="sexo" id="sex" value="M" class="accent-[var(--primary)]">
                                     Masculino
                                 </label>
 
                                 <label class="flex items-center gap-2 cursor-pointer">
-                                    <input type="radio" name="sexo" value="F" class="accent-[var(--primary)]">
+                                    <input type="radio" name="sexo" id="sex" value="F" class="accent-[var(--primary)]">
                                     Feminino
                                 </label>
                             </div>
                         </div>
+
+                        <div class="flex flex-col gap-2">
+                            <label class="text-xs uppercase tracking-widest font-black text-[var(--primary)] ml-1" for="cpf">CPF (apenas números)</label>
+                            <div class="flex gap-6 text-sm text-[var(--background)]">
+                                <input name="cpf" id="cpf" class="w-full px-5 py-4 rounded-2xl border-2 border-[var(--third)] focus:border-[var(--primary)] outline-none transition-all bg-white caret-black" required type="text"
+                                    minlength="11" maxlength="14" />
+                                <span class="mensagem-erro"></span>
+                            </div>
+                        </div>
+
                     </div>
 
                     <div class="flex flex-col gap-3 mb-4">
-                        <label class="text-xs uppercase tracking-widest font-black text-[var(--primary)] ml-1">
-                            Foto
-                        </label>
 
-                        <label
-                            class="flex flex-col items-center justify-center w-full h-40 border-2 border-dashed border-[var(--third)] rounded-2xl cursor-pointer hover:border-[var(--primary)] transition-all bg-white">
-                            <span class="text-sm text-gray-500">
-                                Clique ou arraste uma imagem aqui
-                            </span>
-                            <input type="file" class="hidden" accept="image/*">
-                        </label>
+
+                    <div class="flex flex-col items-center gap-6 p-8 bg-white rounded-3xl shadow-sm border border-gray-100 max-w-md mx-auto">
+
+                        <div class="text-center space-y-2">
+                            <h2 class="text-xl font-bold text-gray-800 uppercase tracking-tight">Reconhecimento facial</h2>
+                            <p class="text-sm text-gray-500 leading-relaxed message-success">Clique no quadro abaixo para capturarmos uma imagem sua!</p>
+                        </div>
+
+                        <div class="relative w-full group">
+                            <img src="../images/reconhecimento.png" alt="Rosto com olhos e um sorriso dentro de um enquadramento"
+                                data-video-botao 
+                                class="w-full h-64 object-contain p-4 border-2 border-dashed border-[var(--third)] rounded-2xl cursor-pointer hover:border-[var(--primary)] transition-all bg-gray-50">
+
+                            <div class="hidden flex flex-col items-center justify-center gap-8" data-camera>
+                                <video class="w-full h-64 object-cover rounded-2xl border-2 border-[var(--primary)] shadow-inner" autoplay data-video></video>
+                                <button class="flex m-auto mt-4 px-6 py-2 bg-[var(--primary)] text-white font-bold rounded-full hover:opacity-90 transition-all shadow-md uppercase text-xs tracking-widest" data-tirar-foto>
+                                    Tirar foto
+                                </button>
+                            </div>
+
+                            <div class="hidden flex-col items-center text-center gap-4 p-4 bg-green-50 rounded-2xl border border-green-200" data-mensagem>
+                                <canvas class="w-full h-48 object-cover rounded-lg shadow-sm" data-video-canvas></canvas>
+                                
+                                <div class="flex items-center gap-4">
+                                    <img src="../images/ícone check.png" alt="Ícone de validação" class="w-5 h-5">
+                                    <p class="text-sm font-medium text-green-700">Prontinho, imagem capturada!</p>
+                                    <button class="flex m-auto mt-4 px-6 py-2 bg-[var(--primary)] text-white font-bold rounded-full hover:opacity-90 transition-all shadow-md uppercase text-xs tracking-widest" data-enviar>
+                                        Baixar Foto
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                        
                     </div>
 
                     <div class="flex flex-col gap-2">
                         <label class="text-xs uppercase tracking-widest font-black text-[var(--primary)] ml-1">
                             Assunto ou Mensagem
                         </label>
-                        <textarea rows="4" placeholder="Como posso te ajudar?"
-                            class="w-full px-5 py-4 rounded-2xl border-2 border-[var(--third)] focus:border-[var(--primary)] outline-none transition-all bg-white resize-none"></textarea>
+                        <textarea id="message" rows="4" placeholder="Como posso te ajudar?" required
+                            class="w-full px-5 py-4 rounded-2xl border-2 border-[var(--third)] focus:border-[var(--primary)] outline-none transition-all bg-white resize-none caret-black">
+                        </textarea>
+                        <span class="mensagem-erro"></span>
                     </div>
 
                     <div class="flex justify-between items-center mt-4">
@@ -394,6 +424,7 @@
                 </div>
             </div>
         </footer>
+        <script src="../js/script.js" type="module"></script>
     </main>
 
 </body>
